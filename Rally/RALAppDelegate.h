@@ -1,5 +1,5 @@
 //
-//  AppDelegate.h
+//  RALAppDelegate.h
 //  Rally
 //
 //  Created by Arai on 2016/04/01.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface RALAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 

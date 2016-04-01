@@ -8,13 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		267635711CAE5A0400F7A019 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 267635701CAE5A0400F7A019 /* main.m */; };
-		267635741CAE5A0400F7A019 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 267635731CAE5A0400F7A019 /* AppDelegate.m */; };
-		267635771CAE5A0400F7A019 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 267635761CAE5A0400F7A019 /* ViewController.m */; };
-		2676357A1CAE5A0400F7A019 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 267635781CAE5A0400F7A019 /* Main.storyboard */; };
+		267635741CAE5A0400F7A019 /* RALAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 267635731CAE5A0400F7A019 /* RALAppDelegate.m */; };
+		2676357A1CAE5A0400F7A019 /* RALLibrary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 267635781CAE5A0400F7A019 /* RALLibrary.storyboard */; };
 		2676357C1CAE5A0400F7A019 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2676357B1CAE5A0400F7A019 /* Assets.xcassets */; };
 		2676357F1CAE5A0400F7A019 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2676357D1CAE5A0400F7A019 /* LaunchScreen.storyboard */; };
 		2676358A1CAE5A0400F7A019 /* RallyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 267635891CAE5A0400F7A019 /* RallyTests.m */; };
 		267635951CAE5A0400F7A019 /* RallyUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 267635941CAE5A0400F7A019 /* RallyUITests.m */; };
+		267635A41CAE5B6000F7A019 /* RALLibraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 267635A31CAE5B6000F7A019 /* RALLibraryViewController.m */; };
+		267635AA1CAE5D4800F7A019 /* RALLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 267635A91CAE5D4800F7A019 /* RALLibrary.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,11 +38,9 @@
 /* Begin PBXFileReference section */
 		2676356C1CAE5A0400F7A019 /* Rally.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rally.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		267635701CAE5A0400F7A019 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		267635721CAE5A0400F7A019 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		267635731CAE5A0400F7A019 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		267635751CAE5A0400F7A019 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		267635761CAE5A0400F7A019 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		267635791CAE5A0400F7A019 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		267635721CAE5A0400F7A019 /* RALAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RALAppDelegate.h; sourceTree = "<group>"; };
+		267635731CAE5A0400F7A019 /* RALAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RALAppDelegate.m; sourceTree = "<group>"; };
+		267635791CAE5A0400F7A019 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/RALLibrary.storyboard; sourceTree = "<group>"; };
 		2676357B1CAE5A0400F7A019 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2676357E1CAE5A0400F7A019 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		267635801CAE5A0400F7A019 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -51,6 +50,10 @@
 		267635901CAE5A0400F7A019 /* RallyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RallyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		267635941CAE5A0400F7A019 /* RallyUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RallyUITests.m; sourceTree = "<group>"; };
 		267635961CAE5A0400F7A019 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		267635A21CAE5B6000F7A019 /* RALLibraryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RALLibraryViewController.h; sourceTree = "<group>"; };
+		267635A31CAE5B6000F7A019 /* RALLibraryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RALLibraryViewController.m; sourceTree = "<group>"; };
+		267635A81CAE5D4800F7A019 /* RALLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RALLibrary.h; sourceTree = "<group>"; };
+		267635A91CAE5D4800F7A019 /* RALLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RALLibrary.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,11 +104,13 @@
 		2676356E1CAE5A0400F7A019 /* Rally */ = {
 			isa = PBXGroup;
 			children = (
-				267635721CAE5A0400F7A019 /* AppDelegate.h */,
-				267635731CAE5A0400F7A019 /* AppDelegate.m */,
-				267635751CAE5A0400F7A019 /* ViewController.h */,
-				267635761CAE5A0400F7A019 /* ViewController.m */,
-				267635781CAE5A0400F7A019 /* Main.storyboard */,
+				267635721CAE5A0400F7A019 /* RALAppDelegate.h */,
+				267635731CAE5A0400F7A019 /* RALAppDelegate.m */,
+				267635781CAE5A0400F7A019 /* RALLibrary.storyboard */,
+				267635A21CAE5B6000F7A019 /* RALLibraryViewController.h */,
+				267635A31CAE5B6000F7A019 /* RALLibraryViewController.m */,
+				267635A81CAE5D4800F7A019 /* RALLibrary.h */,
+				267635A91CAE5D4800F7A019 /* RALLibrary.m */,
 				2676357B1CAE5A0400F7A019 /* Assets.xcassets */,
 				2676357D1CAE5A0400F7A019 /* LaunchScreen.storyboard */,
 				267635801CAE5A0400F7A019 /* Info.plist */,
@@ -245,7 +250,7 @@
 			files = (
 				2676357F1CAE5A0400F7A019 /* LaunchScreen.storyboard in Resources */,
 				2676357C1CAE5A0400F7A019 /* Assets.xcassets in Resources */,
-				2676357A1CAE5A0400F7A019 /* Main.storyboard in Resources */,
+				2676357A1CAE5A0400F7A019 /* RALLibrary.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,9 +275,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				267635771CAE5A0400F7A019 /* ViewController.m in Sources */,
-				267635741CAE5A0400F7A019 /* AppDelegate.m in Sources */,
+				267635741CAE5A0400F7A019 /* RALAppDelegate.m in Sources */,
+				267635A41CAE5B6000F7A019 /* RALLibraryViewController.m in Sources */,
 				267635711CAE5A0400F7A019 /* main.m in Sources */,
+				267635AA1CAE5D4800F7A019 /* RALLibrary.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,12 +314,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		267635781CAE5A0400F7A019 /* Main.storyboard */ = {
+		267635781CAE5A0400F7A019 /* RALLibrary.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				267635791CAE5A0400F7A019 /* Base */,
 			);
-			name = Main.storyboard;
+			name = RALLibrary.storyboard;
 			sourceTree = "<group>";
 		};
 		2676357D1CAE5A0400F7A019 /* LaunchScreen.storyboard */ = {

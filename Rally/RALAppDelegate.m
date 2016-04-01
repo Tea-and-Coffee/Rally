@@ -1,18 +1,18 @@
 //
-//  AppDelegate.m
+//  RALAppDelegate.m
 //  Rally
 //
 //  Created by Arai on 2016/04/01.
 //  Copyright © 2016年 masato_arai. All rights reserved.
 //
 
-#import "AppDelegate.h"
+#import "RALAppDelegate.h"
 
-@interface AppDelegate ()
+@interface RALAppDelegate ()
 
 @end
 
-@implementation AppDelegate
+@implementation RALAppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {

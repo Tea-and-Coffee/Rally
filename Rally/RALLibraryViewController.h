@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  RALLibraryViewController.h
 //  Rally
 //
 //  Created by Arai on 2016/04/01.
@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface RALLibraryViewController : UIViewController
 
+@property (nonatomic, strong) NSURL *URL;
 
 @end
-
