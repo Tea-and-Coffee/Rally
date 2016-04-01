@@ -17,15 +17,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.URL = [NSURL URLWithString:@"https://api.calil.jp/library?"];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:self.URL];
+    [request setValue:@"863e4a1924a6c4add0119d07efaf5835" forHTTPHeaderField:@"appkey"];
+    [request setValue:@"東京都" forHTTPHeaderField:@"pref"];
+    [request setValue:@"足立区" forHTTPHeaderField:@"city"];
+    [request setValue:@"json" forKey:@"format"];
+    request.HTTPMethod = @"GET";
     
-    self.URL = [NSURL URLWithString:@"https://api.calil.jp/library?appkey=863e4a1924a6c4add0119d07efaf5835&pref=%E6%9D%B1%E4%BA%AC%E9%83%BD&city=%E8%B6%B3%E7%AB%8B%E5%8C%BA&format=json"];
     NSURLSession *session = [NSURLSession sharedSession];
-    NSURLSessionDataTask *datatask = [session dataTaskWithURL:self.URL completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        
+    NSURLSessionDataTask *datatask = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        NSLog(@"a");
     }];
-    
-    
-    
 }
 
 - (void)didReceiveMemoryWarning {
