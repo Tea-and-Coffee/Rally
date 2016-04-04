@@ -10,4 +10,5 @@
 #import "AFNetworking.h"
 
 // JSON Medel Classes
+#import "RALCheck.h"
 #import "RALLibrary.h"

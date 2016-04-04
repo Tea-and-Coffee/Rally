@@ -17,6 +17,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self fetchLibrary];
+    [self fetchCheck];
+}
+
+- (void)fetchLibrary {
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     
@@ -37,6 +42,28 @@
             RALLibrary *library = [[RALLibrary alloc] initWithDictionary:_library];
             [libraries addObject:library];
         }
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+    }];
+}
+
+- (void)fetchCheck {
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    
+    NSString *string = @"https://api.calil.jp/check";
+    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+    [parameters setObject:@"863e4a1924a6c4add0119d07efaf5835" forKey:@"appkey"];
+    [parameters setObject:@"4834000826" forKey:@"isbn"];
+    [parameters setObject:@"Tokyo_Adachi" forKey:@"systemid"];
+    [parameters setObject:@"Univ_Tokyomirai" forKey:@"systemid"];
+    [parameters setObject:@"json" forKey:@"format"];
+    [parameters setObject:@"" forKey:@"callback"];
+    
+    [manager GET:string parameters:parameters progress:^(NSProgress * _Nonnull downloadProgress) {
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSError *error;
+        NSDictionary *_check = [NSJSONSerialization JSONObjectWithData:responseObject options:0 error:&error];
+        RALCheck *check = [[RALCheck alloc] initWithDictionary:_check];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
     }];
 }
