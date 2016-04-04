@@ -57,15 +57,26 @@
     [parameters setObject:@"Tokyo_Adachi" forKey:@"systemid"];
     [parameters setObject:@"Univ_Tokyomirai" forKey:@"systemid"];
     [parameters setObject:@"json" forKey:@"format"];
-    [parameters setObject:@"" forKey:@"callback"];
     
     [manager GET:string parameters:parameters progress:^(NSProgress * _Nonnull downloadProgress) {
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSData *trimmedData = [self trimmedDataWithResponseObject:responseObject];
+        
         NSError *error;
-        NSDictionary *_check = [NSJSONSerialization JSONObjectWithData:responseObject options:0 error:&error];
+        NSDictionary *_check = [NSJSONSerialization JSONObjectWithData:trimmedData options:0 error:&error];
         RALCheck *check = [[RALCheck alloc] initWithDictionary:_check];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
     }];
+}
+
+- (NSData *)trimmedDataWithResponseObject:(NSData *)responseObject {
+    NSString *string = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+    NSMutableCharacterSet *characterSet = [NSMutableCharacterSet new];
+    [characterSet addCharactersInString:@"callback("];
+    [characterSet addCharactersInString:@");"];
+    NSString *_string = [string stringByTrimmingCharactersInSet:characterSet];
+    NSData *trimmedData = [_string dataUsingEncoding:NSUTF8StringEncoding];
+    return trimmedData;
 }
 
 - (void)didReceiveMemoryWarning {
