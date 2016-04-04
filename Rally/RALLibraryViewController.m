@@ -7,8 +7,6 @@
 //
 
 #import "RALLibraryViewController.h"
-#import "RALLibrary.h"
-#import "AFNetworking.h"
 
 @interface RALLibraryViewController ()
 

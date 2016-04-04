@@ -55,6 +55,7 @@
 		267635A31CAE5B6000F7A019 /* RALLibraryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RALLibraryViewController.m; sourceTree = "<group>"; };
 		267635A81CAE5D4800F7A019 /* RALLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RALLibrary.h; sourceTree = "<group>"; };
 		267635A91CAE5D4800F7A019 /* RALLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RALLibrary.m; sourceTree = "<group>"; };
+		2682AFB01CB218B7000D9726 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		2FAC2507FFD255A08B451EC5 /* Pods-Rally.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rally.release.xcconfig"; path = "Pods/Target Support Files/Pods-Rally/Pods-Rally.release.xcconfig"; sourceTree = "<group>"; };
 		80F549B46D0A74FEB8DCBF19 /* Pods-Rally.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rally.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Rally/Pods-Rally.debug.xcconfig"; sourceTree = "<group>"; };
 		F46705B190F43764C0F612DF /* libPods-Rally.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Rally.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,7 +121,6 @@
 				267635A91CAE5D4800F7A019 /* RALLibrary.m */,
 				2676357B1CAE5A0400F7A019 /* Assets.xcassets */,
 				2676357D1CAE5A0400F7A019 /* LaunchScreen.storyboard */,
-				267635801CAE5A0400F7A019 /* Info.plist */,
 				2676356F1CAE5A0400F7A019 /* Supporting Files */,
 			);
 			path = Rally;
@@ -129,7 +129,9 @@
 		2676356F1CAE5A0400F7A019 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				267635801CAE5A0400F7A019 /* Info.plist */,
 				267635701CAE5A0400F7A019 /* main.m */,
+				2682AFB01CB218B7000D9726 /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -434,6 +436,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREFIX_HEADER = "$(PRODUCT_NAME)/PrefixHeader.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -476,6 +479,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "$(PRODUCT_NAME)/PrefixHeader.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;

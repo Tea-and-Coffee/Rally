@@ -1,0 +1,13 @@
+//
+//  PrefixHeader.pch
+//  Rally
+//
+//  Created by Arai on 2016/04/04.
+//  Copyright © 2016年 masato_arai. All rights reserved.
+//
+
+// Libraries
+#import "AFNetworking.h"
+
+// JSON Medel Classes
+#import "RALLibrary.h"
