@@ -8,7 +8,7 @@
 //	Model file Generated using JSONExport: https://github.com/Ahmed-Ali/JSONExport
 
 #import <UIKit/UIKit.h>
-#import "NSArray.h"
+#import "RALBook.h"
 
 @interface RALCheck : NSObject
 

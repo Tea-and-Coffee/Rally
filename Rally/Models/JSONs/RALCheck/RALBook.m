@@ -13,6 +13,7 @@ NSString *const kRALBookIsbn = @"isbn";
 NSString *const kRALBookLibkeys = @"libkeys";
 NSString *const kRALBookReserveurl = @"reserveurl";
 NSString *const kRALBookStatus = @"status";
+NSString *const kRALBookSystemid = @"systemid";
 
 @interface RALBook ()
 @end
@@ -46,7 +47,10 @@ NSString *const kRALBookStatus = @"status";
 	}	
 	if(![dictionary[kRALBookStatus] isKindOfClass:[NSNull class]]){
 		self.status = dictionary[kRALBookStatus];
-	}	
+	}
+    if(![dictionary[kRALBookSystemid] isKindOfClass:[NSNull class]]){
+        self.systemid = dictionary[kRALBookSystemid];
+    }
 	return self;
 }
 
@@ -71,6 +75,9 @@ NSString *const kRALBookStatus = @"status";
 	if(self.status != nil){
 		dictionary[kRALBookStatus] = self.status;
 	}
+    if(self.systemid != nil){
+        dictionary[kRALBookSystemid] = self.systemid;
+    }
 	return dictionary;
 
 }
@@ -92,6 +99,9 @@ NSString *const kRALBookStatus = @"status";
 	if(self.status != nil){
 		[aCoder encodeObject:self.status forKey:kRALBookStatus];
 	}
+    if(self.systemid != nil){
+        [aCoder encodeObject:self.systemid forKey:kRALBookSystemid];
+    }
 
 }
 
@@ -105,6 +115,7 @@ NSString *const kRALBookStatus = @"status";
 	self.libkeys = [aDecoder decodeObjectForKey:kRALBookLibkeys];
 	self.reserveurl = [aDecoder decodeObjectForKey:kRALBookReserveurl];
 	self.status = [aDecoder decodeObjectForKey:kRALBookStatus];
+    self.systemid = [aDecoder decodeObjectForKey:kRALBookSystemid];
 	return self;
 
 }
@@ -120,6 +131,7 @@ NSString *const kRALBookStatus = @"status";
 	copy.libkeys = [self.libkeys copyWithZone:zone];
 	copy.reserveurl = [self.reserveurl copyWithZone:zone];
 	copy.status = [self.status copyWithZone:zone];
+    copy.systemid = [self.systemid copyWithZone:zone];
 
 	return copy;
 }

@@ -26,13 +26,21 @@ NSString *const kRALCheckSession = @"session";
 
 -(instancetype)initWithDictionary:(NSDictionary *)dictionary
 {
-	self = [super init];
-	if(dictionary[kRALCheckBooks] != nil && [dictionary[kRALCheckBooks] isKindOfClass:[NSArray class]]){
-		NSArray * booksDictionaries = dictionary[kRALCheckBooks];
-		NSMutableArray * booksItems = [NSMutableArray array];
-		for(NSDictionary * booksDictionary in booksDictionaries){
-			NSArray * booksItem = [[NSArray alloc] initWithDictionary:booksDictionary];
-			[booksItems addObject:booksItem];
+    self = [super init];
+    if(dictionary[kRALCheckBooks] != nil && [dictionary[kRALCheckBooks] isKindOfClass:[NSDictionary class]]){
+        NSDictionary * booksDictionaries = dictionary[kRALCheckBooks];
+        NSMutableArray * booksItems = [NSMutableArray array];
+        for(NSString * isbn in booksDictionaries){
+            NSDictionary * _booksDictionaries = booksDictionaries[isbn];
+            NSMutableArray * _booksItems = [NSMutableArray array];
+            for(NSString * _systemid in _booksDictionaries){
+                NSMutableDictionary *_booksDictionary = _booksDictionaries[_systemid];
+                [_booksDictionary setObject:isbn forKey:kRALBookIsbn];
+                [_booksDictionary setObject:_systemid forKey:kRALBookSystemid];
+                RALBook * _booksItem = [[RALBook alloc] initWithDictionary:_booksDictionaries[_systemid]];
+                [_booksItems addObject:_booksItem];
+            }
+            [booksItems addObject:_booksItems];
 		}
 		self.books = booksItems;
 	}
