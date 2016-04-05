@@ -8,11 +8,11 @@
 //	Model file Generated using JSONExport: https://github.com/Ahmed-Ali/JSONExport
 
 #import <UIKit/UIKit.h>
-#import "RALBook.h"
+#import "NSArray.h"
 
 @interface RALCheck : NSObject
 
-@property (nonatomic, strong) RALBook * books;
+@property (nonatomic, strong) NSArray * books;
 @property (nonatomic, assign) NSInteger continueField;
 @property (nonatomic, strong) NSString * session;
 

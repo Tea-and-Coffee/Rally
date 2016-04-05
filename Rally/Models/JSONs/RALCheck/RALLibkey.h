@@ -1,7 +1,7 @@
 //
 //	RALLibkey.h
 //
-//	Create by Arai on 4/4/2016
+//	Create by Arai on 5/4/2016
 //	Copyright © 2016. All rights reserved.
 //
 
@@ -9,9 +9,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RALLibkey : NSObject <NSCopying>
+@interface RALLibkey : NSObject
 
 @property (nonatomic, strong) NSString * libkey;
+@property (nonatomic, strong) NSString * libstatus;
 
 -(instancetype)initWithDictionary:(NSDictionary *)dictionary;
 

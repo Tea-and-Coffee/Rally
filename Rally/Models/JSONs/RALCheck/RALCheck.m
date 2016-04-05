@@ -27,10 +27,15 @@ NSString *const kRALCheckSession = @"session";
 -(instancetype)initWithDictionary:(NSDictionary *)dictionary
 {
 	self = [super init];
-	if(![dictionary[kRALCheckBooks] isKindOfClass:[NSNull class]]){
-		self.books = [[RALBook alloc] initWithDictionary:dictionary[kRALCheckBooks]];
+	if(dictionary[kRALCheckBooks] != nil && [dictionary[kRALCheckBooks] isKindOfClass:[NSArray class]]){
+		NSArray * booksDictionaries = dictionary[kRALCheckBooks];
+		NSMutableArray * booksItems = [NSMutableArray array];
+		for(NSDictionary * booksDictionary in booksDictionaries){
+			NSArray * booksItem = [[NSArray alloc] initWithDictionary:booksDictionary];
+			[booksItems addObject:booksItem];
+		}
+		self.books = booksItems;
 	}
-
 	if(![dictionary[kRALCheckContinueField] isKindOfClass:[NSNull class]]){
 		self.continueField = [dictionary[kRALCheckContinueField] integerValue];
 	}
@@ -49,7 +54,11 @@ NSString *const kRALCheckSession = @"session";
 {
 	NSMutableDictionary * dictionary = [NSMutableDictionary dictionary];
 	if(self.books != nil){
-		dictionary[kRALCheckBooks] = [self.books toDictionary];
+		NSMutableArray * dictionaryElements = [NSMutableArray array];
+		for(NSArray * booksElement in self.books){
+			[dictionaryElements addObject:[booksElement toDictionary]];
+		}
+		dictionary[kRALCheckBooks] = dictionaryElements;
 	}
 	dictionary[kRALCheckContinueField] = @(self.continueField);
 	if(self.session != nil){

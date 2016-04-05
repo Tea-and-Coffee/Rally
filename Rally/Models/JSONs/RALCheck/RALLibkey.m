@@ -1,7 +1,7 @@
 //
 //	RALLibkey.m
 //
-//	Create by Arai on 4/4/2016
+//	Create by Arai on 5/4/2016
 //	Copyright © 2016. All rights reserved.
 //	Model file Generated using JSONExport: https://github.com/Ahmed-Ali/JSONExport
 
@@ -10,6 +10,7 @@
 #import "RALLibkey.h"
 
 NSString *const kRALLibkeyLibkey = @"libkey";
+NSString *const kRALLibkeyLibstatus = @"libstatus";
 
 @interface RALLibkey ()
 @end
@@ -28,6 +29,9 @@ NSString *const kRALLibkeyLibkey = @"libkey";
 	if(![dictionary[kRALLibkeyLibkey] isKindOfClass:[NSNull class]]){
 		self.libkey = dictionary[kRALLibkeyLibkey];
 	}	
+	if(![dictionary[kRALLibkeyLibstatus] isKindOfClass:[NSNull class]]){
+		self.libstatus = dictionary[kRALLibkeyLibstatus];
+	}	
 	return self;
 }
 
@@ -40,6 +44,9 @@ NSString *const kRALLibkeyLibkey = @"libkey";
 	NSMutableDictionary * dictionary = [NSMutableDictionary dictionary];
 	if(self.libkey != nil){
 		dictionary[kRALLibkeyLibkey] = self.libkey;
+	}
+	if(self.libstatus != nil){
+		dictionary[kRALLibkeyLibstatus] = self.libstatus;
 	}
 	return dictionary;
 
@@ -56,6 +63,9 @@ NSString *const kRALLibkeyLibkey = @"libkey";
 	if(self.libkey != nil){
 		[aCoder encodeObject:self.libkey forKey:kRALLibkeyLibkey];
 	}
+	if(self.libstatus != nil){
+		[aCoder encodeObject:self.libstatus forKey:kRALLibkeyLibstatus];
+	}
 
 }
 
@@ -66,6 +76,7 @@ NSString *const kRALLibkeyLibkey = @"libkey";
 {
 	self = [super init];
 	self.libkey = [aDecoder decodeObjectForKey:kRALLibkeyLibkey];
+	self.libstatus = [aDecoder decodeObjectForKey:kRALLibkeyLibstatus];
 	return self;
 
 }
@@ -78,6 +89,7 @@ NSString *const kRALLibkeyLibkey = @"libkey";
 	RALLibkey *copy = [RALLibkey new];
 
 	copy.libkey = [self.libkey copyWithZone:zone];
+	copy.libstatus = [self.libstatus copyWithZone:zone];
 
 	return copy;
 }

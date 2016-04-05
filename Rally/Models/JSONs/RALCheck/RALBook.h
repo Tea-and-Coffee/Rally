@@ -1,18 +1,21 @@
 //
 //	RALBook.h
 //
-//	Create by Arai on 4/4/2016
+//	Create by Arai on 5/4/2016
 //	Copyright © 2016. All rights reserved.
 //
 
 //	Model file Generated using JSONExport: https://github.com/Ahmed-Ali/JSONExport
 
 #import <UIKit/UIKit.h>
-#import "RALIsbn.h"
+#import "RALLibkey.h"
 
-@interface RALBook : NSObject <NSCopying>
+@interface RALBook : NSObject
 
-@property (nonatomic, strong) RALIsbn * isbn;
+@property (nonatomic, assign) NSInteger isbn;
+@property (nonatomic, strong) NSArray * libkeys;
+@property (nonatomic, strong) NSString * reserveurl;
+@property (nonatomic, strong) NSString * status;
 
 -(instancetype)initWithDictionary:(NSDictionary *)dictionary;
 
