@@ -1,5 +1,5 @@
 //
-//	RALBook.m
+//	RALIsbn.m
 //
 //	Create by Arai on 6/4/2016
 //	Copyright © 2016. All rights reserved.
@@ -7,13 +7,13 @@
 
 
 
-#import "RALBook.h"
+#import "RALIsbn.h"
 
-NSString *const kRALBookIsbn = @"isbn";
+NSString *const kRALIsbnSystemid = @"systemid";
 
-@interface RALBook ()
+@interface RALIsbn ()
 @end
-@implementation RALBook
+@implementation RALIsbn
 
 
 
@@ -25,8 +25,8 @@ NSString *const kRALBookIsbn = @"isbn";
 -(instancetype)initWithDictionary:(NSDictionary *)dictionary
 {
 	self = [super init];
-	if(![dictionary[kRALBookIsbn] isKindOfClass:[NSNull class]]){
-		self.isbn = [[RALIsbn alloc] initWithDictionary:dictionary[kRALBookIsbn]];
+	if(![dictionary[kRALIsbnSystemid] isKindOfClass:[NSNull class]]){
+		self.systemid = [[RALSystemid alloc] initWithDictionary:dictionary[kRALIsbnSystemid]];
 	}
 
 	return self;
@@ -39,8 +39,8 @@ NSString *const kRALBookIsbn = @"isbn";
 -(NSDictionary *)toDictionary
 {
 	NSMutableDictionary * dictionary = [NSMutableDictionary dictionary];
-	if(self.isbn != nil){
-		dictionary[kRALBookIsbn] = [self.isbn toDictionary];
+	if(self.systemid != nil){
+		dictionary[kRALIsbnSystemid] = [self.systemid toDictionary];
 	}
 	return dictionary;
 
@@ -54,8 +54,8 @@ NSString *const kRALBookIsbn = @"isbn";
  */
 - (void)encodeWithCoder:(NSCoder *)aCoder
 {
-	if(self.isbn != nil){
-		[aCoder encodeObject:self.isbn forKey:kRALBookIsbn];
+	if(self.systemid != nil){
+		[aCoder encodeObject:self.systemid forKey:kRALIsbnSystemid];
 	}
 
 }
@@ -66,7 +66,7 @@ NSString *const kRALBookIsbn = @"isbn";
 - (instancetype)initWithCoder:(NSCoder *)aDecoder
 {
 	self = [super init];
-	self.isbn = [aDecoder decodeObjectForKey:kRALBookIsbn];
+	self.systemid = [aDecoder decodeObjectForKey:kRALIsbnSystemid];
 	return self;
 
 }
@@ -76,9 +76,9 @@ NSString *const kRALBookIsbn = @"isbn";
  */
 - (instancetype)copyWithZone:(NSZone *)zone
 {
-	RALBook *copy = [RALBook new];
+	RALIsbn *copy = [RALIsbn new];
 
-	copy.isbn = [self.isbn copyWithZone:zone];
+	copy.systemid = [self.systemid copyWithZone:zone];
 
 	return copy;
 }

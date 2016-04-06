@@ -1,5 +1,5 @@
 //
-//	RALCheck.h
+//	RALSystemid.h
 //
 //	Create by Arai on 6/4/2016
 //	Copyright © 2016. All rights reserved.
@@ -8,13 +8,13 @@
 //	Model file Generated using JSONExport: https://github.com/Ahmed-Ali/JSONExport
 
 #import <UIKit/UIKit.h>
-#import "RALBook.h"
+#import "RALLibkey.h"
 
-@interface RALCheck : NSObject
+@interface RALSystemid : NSObject <NSCopying>
 
-@property (nonatomic, strong) RALBook * books;
-@property (nonatomic, assign) NSInteger continueField;
-@property (nonatomic, strong) NSString * session;
+@property (nonatomic, strong) RALLibkey * libkey;
+@property (nonatomic, strong) NSString * reserveurl;
+@property (nonatomic, strong) NSString * status;
 
 -(instancetype)initWithDictionary:(NSDictionary *)dictionary;
 

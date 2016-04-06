@@ -1,7 +1,7 @@
 //
 //	RALLibkey.m
 //
-//	Create by Arai on 5/4/2016
+//	Create by Arai on 6/4/2016
 //	Copyright © 2016. All rights reserved.
 //	Model file Generated using JSONExport: https://github.com/Ahmed-Ali/JSONExport
 
@@ -9,8 +9,9 @@
 
 #import "RALLibkey.h"
 
-NSString *const kRALLibkeyLibkey = @"libkey";
-NSString *const kRALLibkeyLibstatus = @"libstatus";
+NSString *const kRALLibkey世田谷 = @"世田谷";
+NSString *const kRALLibkey玉川台 = @"玉川台";
+NSString *const kRALLibkey経堂 = @"経堂";
 
 @interface RALLibkey ()
 @end
@@ -26,11 +27,14 @@ NSString *const kRALLibkeyLibstatus = @"libstatus";
 -(instancetype)initWithDictionary:(NSDictionary *)dictionary
 {
 	self = [super init];
-	if(![dictionary[kRALLibkeyLibkey] isKindOfClass:[NSNull class]]){
-		self.libkey = dictionary[kRALLibkeyLibkey];
+	if(![dictionary[kRALLibkey世田谷] isKindOfClass:[NSNull class]]){
+		self.世田谷 = dictionary[kRALLibkey世田谷];
 	}	
-	if(![dictionary[kRALLibkeyLibstatus] isKindOfClass:[NSNull class]]){
-		self.libstatus = dictionary[kRALLibkeyLibstatus];
+	if(![dictionary[kRALLibkey玉川台] isKindOfClass:[NSNull class]]){
+		self.玉川台 = dictionary[kRALLibkey玉川台];
+	}	
+	if(![dictionary[kRALLibkey経堂] isKindOfClass:[NSNull class]]){
+		self.経堂 = dictionary[kRALLibkey経堂];
 	}	
 	return self;
 }
@@ -42,11 +46,14 @@ NSString *const kRALLibkeyLibstatus = @"libstatus";
 -(NSDictionary *)toDictionary
 {
 	NSMutableDictionary * dictionary = [NSMutableDictionary dictionary];
-	if(self.libkey != nil){
-		dictionary[kRALLibkeyLibkey] = self.libkey;
+	if(self.世田谷 != nil){
+		dictionary[kRALLibkey世田谷] = self.世田谷;
 	}
-	if(self.libstatus != nil){
-		dictionary[kRALLibkeyLibstatus] = self.libstatus;
+	if(self.玉川台 != nil){
+		dictionary[kRALLibkey玉川台] = self.玉川台;
+	}
+	if(self.経堂 != nil){
+		dictionary[kRALLibkey経堂] = self.経堂;
 	}
 	return dictionary;
 
@@ -60,11 +67,14 @@ NSString *const kRALLibkeyLibstatus = @"libstatus";
  */
 - (void)encodeWithCoder:(NSCoder *)aCoder
 {
-	if(self.libkey != nil){
-		[aCoder encodeObject:self.libkey forKey:kRALLibkeyLibkey];
+	if(self.世田谷 != nil){
+		[aCoder encodeObject:self.世田谷 forKey:kRALLibkey世田谷];
 	}
-	if(self.libstatus != nil){
-		[aCoder encodeObject:self.libstatus forKey:kRALLibkeyLibstatus];
+	if(self.玉川台 != nil){
+		[aCoder encodeObject:self.玉川台 forKey:kRALLibkey玉川台];
+	}
+	if(self.経堂 != nil){
+		[aCoder encodeObject:self.経堂 forKey:kRALLibkey経堂];
 	}
 
 }
@@ -75,8 +85,9 @@ NSString *const kRALLibkeyLibstatus = @"libstatus";
 - (instancetype)initWithCoder:(NSCoder *)aDecoder
 {
 	self = [super init];
-	self.libkey = [aDecoder decodeObjectForKey:kRALLibkeyLibkey];
-	self.libstatus = [aDecoder decodeObjectForKey:kRALLibkeyLibstatus];
+	self.世田谷 = [aDecoder decodeObjectForKey:kRALLibkey世田谷];
+	self.玉川台 = [aDecoder decodeObjectForKey:kRALLibkey玉川台];
+	self.経堂 = [aDecoder decodeObjectForKey:kRALLibkey経堂];
 	return self;
 
 }
@@ -88,8 +99,9 @@ NSString *const kRALLibkeyLibstatus = @"libstatus";
 {
 	RALLibkey *copy = [RALLibkey new];
 
-	copy.libkey = [self.libkey copyWithZone:zone];
-	copy.libstatus = [self.libstatus copyWithZone:zone];
+	copy.世田谷 = [self.世田谷 copyWithZone:zone];
+	copy.玉川台 = [self.玉川台 copyWithZone:zone];
+	copy.経堂 = [self.経堂 copyWithZone:zone];
 
 	return copy;
 }

@@ -1,7 +1,7 @@
 //
 //	RALCheck.m
 //
-//	Create by Arai on 4/4/2016
+//	Create by Arai on 6/4/2016
 //	Copyright © 2016. All rights reserved.
 //	Model file Generated using JSONExport: https://github.com/Ahmed-Ali/JSONExport
 
@@ -27,30 +27,17 @@ NSString *const kRALCheckSession = @"session";
 -(instancetype)initWithDictionary:(NSDictionary *)dictionary
 {
 	self = [super init];
-	if(dictionary[kRALCheckBooks] != nil && [dictionary[kRALCheckBooks] isKindOfClass:[NSDictionary class]]){
-		NSDictionary * booksDictionaries = dictionary[kRALCheckBooks];
-		NSMutableArray * booksItems = [NSMutableArray array];
-		for(NSString * isbn in booksDictionaries){
-			NSDictionary * bookDictionaries = booksDictionaries[isbn];
-			NSMutableArray * bookItems = [NSMutableArray array];
-			for(NSString * systemid in bookDictionaries){
-				NSMutableDictionary *bookDictionary = bookDictionaries[systemid];
-				[bookDictionary setObject:isbn forKey:kRALBookIsbn];
-				[bookDictionary setObject:systemid forKey:kRALBookSystemid];
-				RALBook * bookItem = [[RALBook alloc] initWithDictionary:bookDictionaries[systemid]];
-				[bookItems addObject:bookItem];
-			}
-			[booksItems addObject:bookItems];
-		}
-		self.books = booksItems;
+	if(![dictionary[kRALCheckBooks] isKindOfClass:[NSNull class]]){
+		self.books = [[RALBook alloc] initWithDictionary:dictionary[kRALCheckBooks]];
 	}
+
 	if(![dictionary[kRALCheckContinueField] isKindOfClass:[NSNull class]]){
 		self.continueField = [dictionary[kRALCheckContinueField] integerValue];
 	}
 
 	if(![dictionary[kRALCheckSession] isKindOfClass:[NSNull class]]){
 		self.session = dictionary[kRALCheckSession];
-	}
+	}	
 	return self;
 }
 
@@ -62,11 +49,7 @@ NSString *const kRALCheckSession = @"session";
 {
 	NSMutableDictionary * dictionary = [NSMutableDictionary dictionary];
 	if(self.books != nil){
-		NSMutableArray * dictionaryElements = [NSMutableArray array];
-		for(RALBook * booksElement in self.books){
-			[dictionaryElements addObject:[booksElement toDictionary]];
-		}
-		dictionary[kRALCheckBooks] = dictionaryElements;
+		dictionary[kRALCheckBooks] = [self.books toDictionary];
 	}
 	dictionary[kRALCheckContinueField] = @(self.continueField);
 	if(self.session != nil){
