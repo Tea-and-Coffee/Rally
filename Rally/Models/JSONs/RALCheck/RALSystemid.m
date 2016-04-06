@@ -28,7 +28,11 @@ NSString *const kRALSystemidStatus = @"status";
 {
 	self = [super init];
 	if(![dictionary[kRALSystemidLibkey] isKindOfClass:[NSNull class]]){
-		self.libkey = [[RALLibkey alloc] initWithDictionary:dictionary[kRALSystemidLibkey]];
+		self.libkeys = [NSMutableArray array];
+		[dictionary[kRALSystemidLibkey] enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+			RALLibkey *libkey = [[RALLibkey alloc] initWithDictionary:@{key: obj} key:key];
+			[self.libkeys addObject:libkey];
+		}];
 	}
 
 	if(![dictionary[kRALSystemidReserveurl] isKindOfClass:[NSNull class]]){
@@ -47,8 +51,13 @@ NSString *const kRALSystemidStatus = @"status";
 -(NSDictionary *)toDictionary
 {
 	NSMutableDictionary * dictionary = [NSMutableDictionary dictionary];
-	if(self.libkey != nil){
-		dictionary[kRALSystemidLibkey] = [self.libkey toDictionary];
+	if(self.libkeys != nil){
+		NSMutableArray *libkeys = [NSMutableArray array];
+		for (RALLibkey *libkey in self.libkeys) {
+			NSDictionary *libkeyDictionary = [libkey toDictionary];
+			[libkeys addObject:libkeyDictionary];
+		}
+		dictionary[kRALSystemidLibkey] = libkeys;
 	}
 	if(self.reserveurl != nil){
 		dictionary[kRALSystemidReserveurl] = self.reserveurl;
@@ -68,8 +77,8 @@ NSString *const kRALSystemidStatus = @"status";
  */
 - (void)encodeWithCoder:(NSCoder *)aCoder
 {
-	if(self.libkey != nil){
-		[aCoder encodeObject:self.libkey forKey:kRALSystemidLibkey];
+	if(self.libkeys != nil){
+		[aCoder encodeObject:self.libkeys forKey:kRALSystemidLibkey];
 	}
 	if(self.reserveurl != nil){
 		[aCoder encodeObject:self.reserveurl forKey:kRALSystemidReserveurl];
@@ -86,7 +95,7 @@ NSString *const kRALSystemidStatus = @"status";
 - (instancetype)initWithCoder:(NSCoder *)aDecoder
 {
 	self = [super init];
-	self.libkey = [aDecoder decodeObjectForKey:kRALSystemidLibkey];
+	self.libkeys = [aDecoder decodeObjectForKey:kRALSystemidLibkey];
 	self.reserveurl = [aDecoder decodeObjectForKey:kRALSystemidReserveurl];
 	self.status = [aDecoder decodeObjectForKey:kRALSystemidStatus];
 	return self;
@@ -100,7 +109,7 @@ NSString *const kRALSystemidStatus = @"status";
 {
 	RALSystemid *copy = [RALSystemid new];
 
-	copy.libkey = [self.libkey copyWithZone:zone];
+	copy.libkeys = [self.libkeys copyWithZone:zone];
 	copy.reserveurl = [self.reserveurl copyWithZone:zone];
 	copy.status = [self.status copyWithZone:zone];
 

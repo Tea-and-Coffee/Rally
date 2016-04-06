@@ -12,7 +12,7 @@
 
 @interface RALSystemid : NSObject <NSCopying>
 
-@property (nonatomic, strong) RALLibkey * libkey;
+@property (nonatomic, strong) NSMutableArray<RALLibkey *> * libkeys;
 @property (nonatomic, strong) NSString * reserveurl;
 @property (nonatomic, strong) NSString * status;
 

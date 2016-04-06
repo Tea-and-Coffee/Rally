@@ -11,11 +11,10 @@
 
 @interface RALLibkey : NSObject <NSCopying>
 
-@property (nonatomic, strong) NSString * 世田谷;
-@property (nonatomic, strong) NSString * 玉川台;
-@property (nonatomic, strong) NSString * 経堂;
+@property (nonatomic, strong) NSString * libkey;
+@property (nonatomic, strong) NSString * checkout;
 
--(instancetype)initWithDictionary:(NSDictionary *)dictionary;
+-(instancetype)initWithDictionary:(NSDictionary *)dictionary key:(NSString *)key;
 
 -(NSDictionary *)toDictionary;
 @end

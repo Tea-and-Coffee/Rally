@@ -16,7 +16,7 @@
 
 @property (nonatomic, strong) RALIsbn * isbn;
 
--(instancetype)initWithDictionary:(NSDictionary *)dictionary nextKey:(NSString *)nextKey;
+-(instancetype)initWithDictionary:(NSDictionary *)dictionary key:(NSString *)key;
 
 -(NSDictionary *)toDictionary;
 @end

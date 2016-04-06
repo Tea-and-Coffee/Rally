@@ -22,12 +22,12 @@
  * Instantiate the instance using the passed dictionary values to set the properties values
  */
 
--(instancetype)initWithDictionary:(NSDictionary *)dictionary nextKey:(NSString *)nextKey
+-(instancetype)initWithDictionary:(NSDictionary *)dictionary key:(NSString *)key
 {
 	self = [super init];
-	self.RALBookIsbn = nextKey;
+	self.RALBookIsbn = key;
 	if(![dictionary[self.RALBookIsbn] isKindOfClass:[NSNull class]]){
-		self.isbn = [[RALIsbn alloc] initWithDictionary:dictionary[self.RALBookIsbn] nextKey:((NSDictionary *)dictionary[self.RALBookIsbn]).allKeys[0]];
+		self.isbn = [[RALIsbn alloc] initWithDictionary:dictionary[self.RALBookIsbn] key:((NSDictionary *)dictionary[self.RALBookIsbn]).allKeys[0]];
 	}
 
 	return self;
