@@ -9,6 +9,9 @@
 
 #import <UIKit/UIKit.h>
 
+UIKIT_EXTERN NSString *const kRALLibkeyLibkey;
+UIKIT_EXTERN NSString *const kRALLibkeyLibstatus;
+
 @interface RALLibkey : NSObject
 
 @property (nonatomic, strong) NSString * libkey;

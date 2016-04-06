@@ -33,24 +33,27 @@ NSString *const kRALBookSystemid = @"systemid";
 		self.isbn = [dictionary[kRALBookIsbn] integerValue];
 	}
 
-	if(dictionary[kRALBookLibkeys] != nil && [dictionary[kRALBookLibkeys] isKindOfClass:[NSArray class]]){
-		NSArray * libkeysDictionaries = dictionary[kRALBookLibkeys];
-		NSMutableArray * libkeysItems = [NSMutableArray array];
-		for(NSDictionary * libkeysDictionary in libkeysDictionaries){
-			RALLibkey * libkeysItem = [[RALLibkey alloc] initWithDictionary:libkeysDictionary];
-			[libkeysItems addObject:libkeysItem];
+	if(dictionary[kRALLibkeyLibkey] != nil && [dictionary[kRALLibkeyLibkey] isKindOfClass:[NSDictionary class]]){
+		NSMutableDictionary * libkeyDictionaries = dictionary[kRALLibkeyLibkey];
+		NSMutableArray * libkeysItem = [NSMutableArray array];
+		for(NSString * libkey in libkeyDictionaries){
+			NSMutableDictionary *libkeyDictionary = [NSMutableDictionary dictionary];
+			[libkeyDictionary setObject:libkey forKey:kRALLibkeyLibkey];
+			[libkeyDictionary setObject:libkeyDictionaries[libkey] forKey:kRALLibkeyLibstatus];
+			RALLibkey * libkeyItem = [[RALLibkey alloc] initWithDictionary:libkeyDictionary];
+			[libkeysItem addObject:libkeyItem];
 		}
-		self.libkeys = libkeysItems;
+		self.libkeys = libkeysItem;
 	}
 	if(![dictionary[kRALBookReserveurl] isKindOfClass:[NSNull class]]){
 		self.reserveurl = dictionary[kRALBookReserveurl];
-	}	
+	}
 	if(![dictionary[kRALBookStatus] isKindOfClass:[NSNull class]]){
 		self.status = dictionary[kRALBookStatus];
 	}
-    if(![dictionary[kRALBookSystemid] isKindOfClass:[NSNull class]]){
-        self.systemid = dictionary[kRALBookSystemid];
-    }
+	if(![dictionary[kRALBookSystemid] isKindOfClass:[NSNull class]]){
+		self.systemid = dictionary[kRALBookSystemid];
+	}
 	return self;
 }
 
@@ -67,7 +70,7 @@ NSString *const kRALBookSystemid = @"systemid";
 		for(RALLibkey * libkeysElement in self.libkeys){
 			[dictionaryElements addObject:[libkeysElement toDictionary]];
 		}
-		dictionary[kRALBookLibkeys] = dictionaryElements;
+		dictionary[kRALLibkeyLibkey] = dictionaryElements;
 	}
 	if(self.reserveurl != nil){
 		dictionary[kRALBookReserveurl] = self.reserveurl;
@@ -75,9 +78,9 @@ NSString *const kRALBookSystemid = @"systemid";
 	if(self.status != nil){
 		dictionary[kRALBookStatus] = self.status;
 	}
-    if(self.systemid != nil){
-        dictionary[kRALBookSystemid] = self.systemid;
-    }
+	if(self.systemid != nil){
+		dictionary[kRALBookSystemid] = self.systemid;
+	}
 	return dictionary;
 
 }
@@ -91,7 +94,7 @@ NSString *const kRALBookSystemid = @"systemid";
 - (void)encodeWithCoder:(NSCoder *)aCoder
 {
 	[aCoder encodeObject:@(self.isbn) forKey:kRALBookIsbn];	if(self.libkeys != nil){
-		[aCoder encodeObject:self.libkeys forKey:kRALBookLibkeys];
+		[aCoder encodeObject:self.libkeys forKey:kRALLibkeyLibkey];
 	}
 	if(self.reserveurl != nil){
 		[aCoder encodeObject:self.reserveurl forKey:kRALBookReserveurl];
@@ -99,9 +102,9 @@ NSString *const kRALBookSystemid = @"systemid";
 	if(self.status != nil){
 		[aCoder encodeObject:self.status forKey:kRALBookStatus];
 	}
-    if(self.systemid != nil){
-        [aCoder encodeObject:self.systemid forKey:kRALBookSystemid];
-    }
+	if(self.systemid != nil){
+		[aCoder encodeObject:self.systemid forKey:kRALBookSystemid];
+	}
 
 }
 
@@ -112,10 +115,10 @@ NSString *const kRALBookSystemid = @"systemid";
 {
 	self = [super init];
 	self.isbn = [[aDecoder decodeObjectForKey:kRALBookIsbn] integerValue];
-	self.libkeys = [aDecoder decodeObjectForKey:kRALBookLibkeys];
+	self.libkeys = [aDecoder decodeObjectForKey:kRALLibkeyLibkey];
 	self.reserveurl = [aDecoder decodeObjectForKey:kRALBookReserveurl];
 	self.status = [aDecoder decodeObjectForKey:kRALBookStatus];
-    self.systemid = [aDecoder decodeObjectForKey:kRALBookSystemid];
+	self.systemid = [aDecoder decodeObjectForKey:kRALBookSystemid];
 	return self;
 
 }
@@ -131,7 +134,7 @@ NSString *const kRALBookSystemid = @"systemid";
 	copy.libkeys = [self.libkeys copyWithZone:zone];
 	copy.reserveurl = [self.reserveurl copyWithZone:zone];
 	copy.status = [self.status copyWithZone:zone];
-    copy.systemid = [self.systemid copyWithZone:zone];
+	copy.systemid = [self.systemid copyWithZone:zone];
 
 	return copy;
 }
