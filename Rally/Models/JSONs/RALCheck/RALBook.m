@@ -9,7 +9,7 @@
 
 #import "RALBook.h"
 
-NSString *const kRALBookIsbn = @"isbn";
+//NSString *const kRALBookIsbn = @"isbn";
 
 @interface RALBook ()
 @end
@@ -22,11 +22,12 @@ NSString *const kRALBookIsbn = @"isbn";
  * Instantiate the instance using the passed dictionary values to set the properties values
  */
 
--(instancetype)initWithDictionary:(NSDictionary *)dictionary
+-(instancetype)initWithDictionary:(NSDictionary *)dictionary nextKey:(NSString *)nextKey
 {
 	self = [super init];
-	if(![dictionary[kRALBookIsbn] isKindOfClass:[NSNull class]]){
-		self.isbn = [[RALIsbn alloc] initWithDictionary:dictionary[kRALBookIsbn]];
+	self.RALBookIsbn = nextKey;
+	if(![dictionary[self.RALBookIsbn] isKindOfClass:[NSNull class]]){
+		self.isbn = [[RALIsbn alloc] initWithDictionary:dictionary[self.RALBookIsbn] nextKey:((NSDictionary *)dictionary[self.RALBookIsbn]).allKeys[0]];
 	}
 
 	return self;
@@ -40,7 +41,7 @@ NSString *const kRALBookIsbn = @"isbn";
 {
 	NSMutableDictionary * dictionary = [NSMutableDictionary dictionary];
 	if(self.isbn != nil){
-		dictionary[kRALBookIsbn] = [self.isbn toDictionary];
+		dictionary[self.RALBookIsbn] = [self.isbn toDictionary];
 	}
 	return dictionary;
 
@@ -55,7 +56,7 @@ NSString *const kRALBookIsbn = @"isbn";
 - (void)encodeWithCoder:(NSCoder *)aCoder
 {
 	if(self.isbn != nil){
-		[aCoder encodeObject:self.isbn forKey:kRALBookIsbn];
+		[aCoder encodeObject:self.isbn forKey:self.RALBookIsbn];
 	}
 
 }
@@ -66,7 +67,7 @@ NSString *const kRALBookIsbn = @"isbn";
 - (instancetype)initWithCoder:(NSCoder *)aDecoder
 {
 	self = [super init];
-	self.isbn = [aDecoder decodeObjectForKey:kRALBookIsbn];
+	self.isbn = [aDecoder decodeObjectForKey:self.RALBookIsbn];
 	return self;
 
 }

@@ -28,7 +28,7 @@ NSString *const kRALCheckSession = @"session";
 {
 	self = [super init];
 	if(![dictionary[kRALCheckBooks] isKindOfClass:[NSNull class]]){
-		self.books = [[RALBook alloc] initWithDictionary:dictionary[kRALCheckBooks]];
+		self.books = [[RALBook alloc] initWithDictionary:dictionary[kRALCheckBooks] nextKey:((NSDictionary *)dictionary[kRALCheckBooks]).allKeys[0]];
 	}
 
 	if(![dictionary[kRALCheckContinueField] isKindOfClass:[NSNull class]]){

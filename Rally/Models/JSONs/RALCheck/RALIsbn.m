@@ -9,7 +9,7 @@
 
 #import "RALIsbn.h"
 
-NSString *const kRALIsbnSystemid = @"systemid";
+//NSString *const kRALIsbnSystemid = @"systemid";
 
 @interface RALIsbn ()
 @end
@@ -22,11 +22,12 @@ NSString *const kRALIsbnSystemid = @"systemid";
  * Instantiate the instance using the passed dictionary values to set the properties values
  */
 
--(instancetype)initWithDictionary:(NSDictionary *)dictionary
+-(instancetype)initWithDictionary:(NSDictionary *)dictionary nextKey:(NSString *)nextKey
 {
 	self = [super init];
-	if(![dictionary[kRALIsbnSystemid] isKindOfClass:[NSNull class]]){
-		self.systemid = [[RALSystemid alloc] initWithDictionary:dictionary[kRALIsbnSystemid]];
+    self.RALIsbnSystemid = nextKey;
+	if(![dictionary[self.RALIsbnSystemid] isKindOfClass:[NSNull class]]){
+		self.systemid = [[RALSystemid alloc] initWithDictionary:dictionary[self.RALIsbnSystemid]];
 	}
 
 	return self;
@@ -40,7 +41,7 @@ NSString *const kRALIsbnSystemid = @"systemid";
 {
 	NSMutableDictionary * dictionary = [NSMutableDictionary dictionary];
 	if(self.systemid != nil){
-		dictionary[kRALIsbnSystemid] = [self.systemid toDictionary];
+		dictionary[self.RALIsbnSystemid] = [self.systemid toDictionary];
 	}
 	return dictionary;
 
@@ -55,7 +56,7 @@ NSString *const kRALIsbnSystemid = @"systemid";
 - (void)encodeWithCoder:(NSCoder *)aCoder
 {
 	if(self.systemid != nil){
-		[aCoder encodeObject:self.systemid forKey:kRALIsbnSystemid];
+		[aCoder encodeObject:self.systemid forKey:self.RALIsbnSystemid];
 	}
 
 }
@@ -66,7 +67,7 @@ NSString *const kRALIsbnSystemid = @"systemid";
 - (instancetype)initWithCoder:(NSCoder *)aDecoder
 {
 	self = [super init];
-	self.systemid = [aDecoder decodeObjectForKey:kRALIsbnSystemid];
+	self.systemid = [aDecoder decodeObjectForKey:self.RALIsbnSystemid];
 	return self;
 
 }

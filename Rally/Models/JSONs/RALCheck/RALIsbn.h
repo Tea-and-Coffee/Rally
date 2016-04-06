@@ -12,9 +12,11 @@
 
 @interface RALIsbn : NSObject <NSCopying>
 
+@property (nonatomic, strong) NSString * RALIsbnSystemid;
+
 @property (nonatomic, strong) RALSystemid * systemid;
 
--(instancetype)initWithDictionary:(NSDictionary *)dictionary;
+-(instancetype)initWithDictionary:(NSDictionary *)dictionary nextKey:(NSString *)nextKey;
 
 -(NSDictionary *)toDictionary;
 @end

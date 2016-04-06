@@ -12,9 +12,11 @@
 
 @interface RALBook : NSObject <NSCopying>
 
+@property (nonatomic, strong) NSString * RALBookIsbn;
+
 @property (nonatomic, strong) RALIsbn * isbn;
 
--(instancetype)initWithDictionary:(NSDictionary *)dictionary;
+-(instancetype)initWithDictionary:(NSDictionary *)dictionary nextKey:(NSString *)nextKey;
 
 -(NSDictionary *)toDictionary;
 @end
