@@ -1,5 +1,5 @@
 //
-//	RALLibkey.h
+//	RALIsbn.h
 //
 //	Create by Arai on 6/4/2016
 //	Copyright © 2016. All rights reserved.
@@ -8,11 +8,13 @@
 //	Model file Generated using JSONExport: https://github.com/Ahmed-Ali/JSONExport
 
 #import <UIKit/UIKit.h>
+#import "RALSystemid.h"
 
-@interface RALLibkey : NSObject <NSCopying>
+@interface RALIsbn : NSObject <NSCopying>
 
-@property (nonatomic, strong) NSString * libkey;
-@property (nonatomic, strong) NSString * checkout;
+@property (nonatomic, strong) NSString * RALIsbnSystemid;
+
+@property (nonatomic, strong) RALSystemid * systemid;
 
 -(instancetype)initWithDictionary:(NSDictionary *)dictionary key:(NSString *)key;
 

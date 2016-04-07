@@ -1,7 +1,7 @@
 //
 //	RALBook.m
 //
-//	Create by Arai on 5/4/2016
+//	Create by Arai on 6/4/2016
 //	Copyright © 2016. All rights reserved.
 //	Model file Generated using JSONExport: https://github.com/Ahmed-Ali/JSONExport
 
@@ -9,11 +9,7 @@
 
 #import "RALBook.h"
 
-NSString *const kRALBookIsbn = @"isbn";
-NSString *const kRALBookLibkeys = @"libkeys";
-NSString *const kRALBookReserveurl = @"reserveurl";
-NSString *const kRALBookStatus = @"status";
-NSString *const kRALBookSystemid = @"systemid";
+//NSString *const kRALBookIsbn = @"isbn";
 
 @interface RALBook ()
 @end
@@ -26,34 +22,14 @@ NSString *const kRALBookSystemid = @"systemid";
  * Instantiate the instance using the passed dictionary values to set the properties values
  */
 
--(instancetype)initWithDictionary:(NSDictionary *)dictionary
+-(instancetype)initWithDictionary:(NSDictionary *)dictionary key:(NSString *)key
 {
 	self = [super init];
-	if(![dictionary[kRALBookIsbn] isKindOfClass:[NSNull class]]){
-		self.isbn = [dictionary[kRALBookIsbn] integerValue];
+	self.RALBookIsbn = key;
+	if(![dictionary[self.RALBookIsbn] isKindOfClass:[NSNull class]]){
+		self.isbn = [[RALIsbn alloc] initWithDictionary:dictionary[self.RALBookIsbn] key:((NSDictionary *)dictionary[self.RALBookIsbn]).allKeys[0]];
 	}
 
-	if(dictionary[kRALLibkeyLibkey] != nil && [dictionary[kRALLibkeyLibkey] isKindOfClass:[NSDictionary class]]){
-		NSMutableDictionary * libkeyDictionaries = dictionary[kRALLibkeyLibkey];
-		NSMutableArray * libkeysItem = [NSMutableArray array];
-		for(NSString * libkey in libkeyDictionaries){
-			NSMutableDictionary *libkeyDictionary = [NSMutableDictionary dictionary];
-			[libkeyDictionary setObject:libkey forKey:kRALLibkeyLibkey];
-			[libkeyDictionary setObject:libkeyDictionaries[libkey] forKey:kRALLibkeyLibstatus];
-			RALLibkey * libkeyItem = [[RALLibkey alloc] initWithDictionary:libkeyDictionary];
-			[libkeysItem addObject:libkeyItem];
-		}
-		self.libkeys = libkeysItem;
-	}
-	if(![dictionary[kRALBookReserveurl] isKindOfClass:[NSNull class]]){
-		self.reserveurl = dictionary[kRALBookReserveurl];
-	}
-	if(![dictionary[kRALBookStatus] isKindOfClass:[NSNull class]]){
-		self.status = dictionary[kRALBookStatus];
-	}
-	if(![dictionary[kRALBookSystemid] isKindOfClass:[NSNull class]]){
-		self.systemid = dictionary[kRALBookSystemid];
-	}
 	return self;
 }
 
@@ -64,22 +40,8 @@ NSString *const kRALBookSystemid = @"systemid";
 -(NSDictionary *)toDictionary
 {
 	NSMutableDictionary * dictionary = [NSMutableDictionary dictionary];
-	dictionary[kRALBookIsbn] = @(self.isbn);
-	if(self.libkeys != nil){
-		NSMutableArray * dictionaryElements = [NSMutableArray array];
-		for(RALLibkey * libkeysElement in self.libkeys){
-			[dictionaryElements addObject:[libkeysElement toDictionary]];
-		}
-		dictionary[kRALLibkeyLibkey] = dictionaryElements;
-	}
-	if(self.reserveurl != nil){
-		dictionary[kRALBookReserveurl] = self.reserveurl;
-	}
-	if(self.status != nil){
-		dictionary[kRALBookStatus] = self.status;
-	}
-	if(self.systemid != nil){
-		dictionary[kRALBookSystemid] = self.systemid;
+	if(self.isbn != nil){
+		dictionary[self.RALBookIsbn] = [self.isbn toDictionary];
 	}
 	return dictionary;
 
@@ -93,17 +55,8 @@ NSString *const kRALBookSystemid = @"systemid";
  */
 - (void)encodeWithCoder:(NSCoder *)aCoder
 {
-	[aCoder encodeObject:@(self.isbn) forKey:kRALBookIsbn];	if(self.libkeys != nil){
-		[aCoder encodeObject:self.libkeys forKey:kRALLibkeyLibkey];
-	}
-	if(self.reserveurl != nil){
-		[aCoder encodeObject:self.reserveurl forKey:kRALBookReserveurl];
-	}
-	if(self.status != nil){
-		[aCoder encodeObject:self.status forKey:kRALBookStatus];
-	}
-	if(self.systemid != nil){
-		[aCoder encodeObject:self.systemid forKey:kRALBookSystemid];
+	if(self.isbn != nil){
+		[aCoder encodeObject:self.isbn forKey:self.RALBookIsbn];
 	}
 
 }
@@ -114,11 +67,7 @@ NSString *const kRALBookSystemid = @"systemid";
 - (instancetype)initWithCoder:(NSCoder *)aDecoder
 {
 	self = [super init];
-	self.isbn = [[aDecoder decodeObjectForKey:kRALBookIsbn] integerValue];
-	self.libkeys = [aDecoder decodeObjectForKey:kRALLibkeyLibkey];
-	self.reserveurl = [aDecoder decodeObjectForKey:kRALBookReserveurl];
-	self.status = [aDecoder decodeObjectForKey:kRALBookStatus];
-	self.systemid = [aDecoder decodeObjectForKey:kRALBookSystemid];
+	self.isbn = [aDecoder decodeObjectForKey:self.RALBookIsbn];
 	return self;
 
 }
@@ -130,11 +79,7 @@ NSString *const kRALBookSystemid = @"systemid";
 {
 	RALBook *copy = [RALBook new];
 
-	copy.isbn = self.isbn;
-	copy.libkeys = [self.libkeys copyWithZone:zone];
-	copy.reserveurl = [self.reserveurl copyWithZone:zone];
-	copy.status = [self.status copyWithZone:zone];
-	copy.systemid = [self.systemid copyWithZone:zone];
+	copy.isbn = [self.isbn copyWithZone:zone];
 
 	return copy;
 }

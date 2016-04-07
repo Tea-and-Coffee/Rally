@@ -12,13 +12,15 @@
 		2676357C1CAE5A0400F7A019 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2676357B1CAE5A0400F7A019 /* Assets.xcassets */; };
 		2676358A1CAE5A0400F7A019 /* RallyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 267635891CAE5A0400F7A019 /* RallyTests.m */; };
 		267635951CAE5A0400F7A019 /* RallyUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 267635941CAE5A0400F7A019 /* RallyUITests.m */; };
+		267899441CB4D7A700FE9DD8 /* RALBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 2678993B1CB4D7A700FE9DD8 /* RALBook.m */; };
+		267899451CB4D7A700FE9DD8 /* RALCheck.m in Sources */ = {isa = PBXBuildFile; fileRef = 2678993D1CB4D7A700FE9DD8 /* RALCheck.m */; };
+		267899461CB4D7A700FE9DD8 /* RALIsbn.m in Sources */ = {isa = PBXBuildFile; fileRef = 2678993F1CB4D7A700FE9DD8 /* RALIsbn.m */; };
+		267899471CB4D7A700FE9DD8 /* RALLibkey.m in Sources */ = {isa = PBXBuildFile; fileRef = 267899411CB4D7A700FE9DD8 /* RALLibkey.m */; };
+		267899481CB4D7A700FE9DD8 /* RALSystemid.m in Sources */ = {isa = PBXBuildFile; fileRef = 267899431CB4D7A700FE9DD8 /* RALSystemid.m */; };
 		2682AFC31CB21A62000D9726 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2682AFBE1CB21A62000D9726 /* LaunchScreen.storyboard */; };
 		2682AFC41CB21A62000D9726 /* RALLibrary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2682AFC01CB21A62000D9726 /* RALLibrary.storyboard */; };
 		2682AFC51CB21A62000D9726 /* RALLibraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2682AFC21CB21A62000D9726 /* RALLibraryViewController.m */; };
 		2682AFD91CB23373000D9726 /* RALLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 2682AFD81CB23373000D9726 /* RALLibrary.m */; };
-		26F4063F1CB3883700F43169 /* RALBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F4063A1CB3883700F43169 /* RALBook.m */; };
-		26F406401CB3883700F43169 /* RALCheck.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F4063C1CB3883700F43169 /* RALCheck.m */; };
-		26F406411CB3883700F43169 /* RALLibkey.m in Sources */ = {isa = PBXBuildFile; fileRef = 26F4063E1CB3883700F43169 /* RALLibkey.m */; };
 		76AC77F2368614DF3BF81A02 /* libPods-Rally.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F46705B190F43764C0F612DF /* libPods-Rally.a */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +54,16 @@
 		267635901CAE5A0400F7A019 /* RallyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RallyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		267635941CAE5A0400F7A019 /* RallyUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RallyUITests.m; sourceTree = "<group>"; };
 		267635961CAE5A0400F7A019 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2678993A1CB4D7A700FE9DD8 /* RALBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RALBook.h; sourceTree = "<group>"; };
+		2678993B1CB4D7A700FE9DD8 /* RALBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RALBook.m; sourceTree = "<group>"; };
+		2678993C1CB4D7A700FE9DD8 /* RALCheck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RALCheck.h; sourceTree = "<group>"; };
+		2678993D1CB4D7A700FE9DD8 /* RALCheck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RALCheck.m; sourceTree = "<group>"; };
+		2678993E1CB4D7A700FE9DD8 /* RALIsbn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RALIsbn.h; sourceTree = "<group>"; };
+		2678993F1CB4D7A700FE9DD8 /* RALIsbn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RALIsbn.m; sourceTree = "<group>"; };
+		267899401CB4D7A700FE9DD8 /* RALLibkey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RALLibkey.h; sourceTree = "<group>"; };
+		267899411CB4D7A700FE9DD8 /* RALLibkey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RALLibkey.m; sourceTree = "<group>"; };
+		267899421CB4D7A700FE9DD8 /* RALSystemid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RALSystemid.h; sourceTree = "<group>"; };
+		267899431CB4D7A700FE9DD8 /* RALSystemid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RALSystemid.m; sourceTree = "<group>"; };
 		2682AFB01CB218B7000D9726 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		2682AFBE1CB21A62000D9726 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2682AFC01CB21A62000D9726 /* RALLibrary.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RALLibrary.storyboard; sourceTree = "<group>"; };
@@ -59,12 +71,6 @@
 		2682AFC21CB21A62000D9726 /* RALLibraryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RALLibraryViewController.m; sourceTree = "<group>"; };
 		2682AFD71CB23373000D9726 /* RALLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RALLibrary.h; sourceTree = "<group>"; };
 		2682AFD81CB23373000D9726 /* RALLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RALLibrary.m; sourceTree = "<group>"; };
-		26F406391CB3883700F43169 /* RALBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RALBook.h; sourceTree = "<group>"; };
-		26F4063A1CB3883700F43169 /* RALBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RALBook.m; sourceTree = "<group>"; };
-		26F4063B1CB3883700F43169 /* RALCheck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RALCheck.h; sourceTree = "<group>"; };
-		26F4063C1CB3883700F43169 /* RALCheck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RALCheck.m; sourceTree = "<group>"; };
-		26F4063D1CB3883700F43169 /* RALLibkey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RALLibkey.h; sourceTree = "<group>"; };
-		26F4063E1CB3883700F43169 /* RALLibkey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RALLibkey.m; sourceTree = "<group>"; };
 		2FAC2507FFD255A08B451EC5 /* Pods-Rally.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rally.release.xcconfig"; path = "Pods/Target Support Files/Pods-Rally/Pods-Rally.release.xcconfig"; sourceTree = "<group>"; };
 		80F549B46D0A74FEB8DCBF19 /* Pods-Rally.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rally.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Rally/Pods-Rally.debug.xcconfig"; sourceTree = "<group>"; };
 		F46705B190F43764C0F612DF /* libPods-Rally.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Rally.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -216,12 +222,16 @@
 		2682AFDA1CB2338F000D9726 /* RALCheck */ = {
 			isa = PBXGroup;
 			children = (
-				26F406391CB3883700F43169 /* RALBook.h */,
-				26F4063A1CB3883700F43169 /* RALBook.m */,
-				26F4063B1CB3883700F43169 /* RALCheck.h */,
-				26F4063C1CB3883700F43169 /* RALCheck.m */,
-				26F4063D1CB3883700F43169 /* RALLibkey.h */,
-				26F4063E1CB3883700F43169 /* RALLibkey.m */,
+				2678993A1CB4D7A700FE9DD8 /* RALBook.h */,
+				2678993B1CB4D7A700FE9DD8 /* RALBook.m */,
+				2678993C1CB4D7A700FE9DD8 /* RALCheck.h */,
+				2678993D1CB4D7A700FE9DD8 /* RALCheck.m */,
+				2678993E1CB4D7A700FE9DD8 /* RALIsbn.h */,
+				2678993F1CB4D7A700FE9DD8 /* RALIsbn.m */,
+				267899401CB4D7A700FE9DD8 /* RALLibkey.h */,
+				267899411CB4D7A700FE9DD8 /* RALLibkey.m */,
+				267899421CB4D7A700FE9DD8 /* RALSystemid.h */,
+				267899431CB4D7A700FE9DD8 /* RALSystemid.m */,
 			);
 			path = RALCheck;
 			sourceTree = "<group>";
@@ -426,11 +436,13 @@
 			files = (
 				267635741CAE5A0400F7A019 /* RALAppDelegate.m in Sources */,
 				2682AFC51CB21A62000D9726 /* RALLibraryViewController.m in Sources */,
-				26F406401CB3883700F43169 /* RALCheck.m in Sources */,
-				26F406411CB3883700F43169 /* RALLibkey.m in Sources */,
+				267899451CB4D7A700FE9DD8 /* RALCheck.m in Sources */,
 				267635711CAE5A0400F7A019 /* main.m in Sources */,
-				26F4063F1CB3883700F43169 /* RALBook.m in Sources */,
+				267899441CB4D7A700FE9DD8 /* RALBook.m in Sources */,
+				267899471CB4D7A700FE9DD8 /* RALLibkey.m in Sources */,
+				267899481CB4D7A700FE9DD8 /* RALSystemid.m in Sources */,
 				2682AFD91CB23373000D9726 /* RALLibrary.m in Sources */,
+				267899461CB4D7A700FE9DD8 /* RALIsbn.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

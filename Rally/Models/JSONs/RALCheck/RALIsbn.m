@@ -1,5 +1,5 @@
 //
-//	RALLibkey.m
+//	RALIsbn.m
 //
 //	Create by Arai on 6/4/2016
 //	Copyright © 2016. All rights reserved.
@@ -7,11 +7,13 @@
 
 
 
-#import "RALLibkey.h"
+#import "RALIsbn.h"
 
-@interface RALLibkey ()
+//NSString *const kRALIsbnSystemid = @"systemid";
+
+@interface RALIsbn ()
 @end
-@implementation RALLibkey
+@implementation RALIsbn
 
 
 
@@ -23,10 +25,11 @@
 -(instancetype)initWithDictionary:(NSDictionary *)dictionary key:(NSString *)key
 {
 	self = [super init];
-	self.libkey = key;
-	if(![dictionary[self.libkey] isKindOfClass:[NSNull class]]){
-		self.checkout = dictionary[self.libkey];
+    self.RALIsbnSystemid = key;
+	if(![dictionary[self.RALIsbnSystemid] isKindOfClass:[NSNull class]]){
+		self.systemid = [[RALSystemid alloc] initWithDictionary:dictionary[self.RALIsbnSystemid]];
 	}
+
 	return self;
 }
 
@@ -37,8 +40,8 @@
 -(NSDictionary *)toDictionary
 {
 	NSMutableDictionary * dictionary = [NSMutableDictionary dictionary];
-	if(self.checkout != nil){
-		dictionary[self.libkey] = self.checkout;
+	if(self.systemid != nil){
+		dictionary[self.RALIsbnSystemid] = [self.systemid toDictionary];
 	}
 	return dictionary;
 
@@ -52,8 +55,8 @@
  */
 - (void)encodeWithCoder:(NSCoder *)aCoder
 {
-	if(self.checkout != nil){
-		[aCoder encodeObject:self.checkout forKey:self.libkey];
+	if(self.systemid != nil){
+		[aCoder encodeObject:self.systemid forKey:self.RALIsbnSystemid];
 	}
 
 }
@@ -64,7 +67,7 @@
 - (instancetype)initWithCoder:(NSCoder *)aDecoder
 {
 	self = [super init];
-	self.checkout = [aDecoder decodeObjectForKey:self.libkey];
+	self.systemid = [aDecoder decodeObjectForKey:self.RALIsbnSystemid];
 	return self;
 
 }
@@ -74,9 +77,9 @@
  */
 - (instancetype)copyWithZone:(NSZone *)zone
 {
-	RALLibkey *copy = [RALLibkey new];
+	RALIsbn *copy = [RALIsbn new];
 
-	copy.checkout = [self.checkout copyWithZone:zone];
+	copy.systemid = [self.systemid copyWithZone:zone];
 
 	return copy;
 }
