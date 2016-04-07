@@ -55,12 +55,13 @@
     [parameters setObject:@"東京都" forKey:@"pref"];
     [parameters setObject:@"足立区" forKey:@"city"];
     [parameters setObject:@"json" forKey:@"format"];
-    [parameters setObject:@"" forKey:@"callback"];
     
     [manager GET:string parameters:parameters progress:^(NSProgress * _Nonnull downloadProgress) {
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSData *trimmedData = [self trimmedDataWithData:responseObject];
+        
         NSError *error;
-        NSArray *_libraries = [NSJSONSerialization JSONObjectWithData:responseObject options:0 error:&error];
+        NSArray *_libraries = [NSJSONSerialization JSONObjectWithData:trimmedData options:0 error:&error];
         NSMutableArray *libraries = [NSMutableArray array];
         for (NSDictionary *_library in _libraries) {
             RALLibrary *library = [[RALLibrary alloc] initWithDictionary:_library];
@@ -84,10 +85,10 @@
     
     [manager GET:string parameters:parameters progress:^(NSProgress * _Nonnull downloadProgress) {
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSData *trimmedData = [self trimmedDataWithResponseObject:responseObject];
+        NSData *trimmedData = [self trimmedDataWithData:responseObject];
         
         NSError *error;
-        NSDictionary *_check = [NSJSONSerialization JSONObjectWithData:trimmedData options:0 error:&error];
+        NSDictionary *_check = [NSJSONSerialization JSONObjectWithData:trimmedData options:NSJSONReadingMutableContainers error:&error];
         RALCheck *check = [[RALCheck alloc] initWithDictionary:_check];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
     }];
@@ -105,7 +106,7 @@
     
     [manager GET:string parameters:parameters progress:^(NSProgress * _Nonnull downloadProgress) {
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSData *trimmedData = [self trimmedDataWithResponseObject:responseObject];
+        NSData *trimmedData = [self trimmedDataWithData:responseObject];
         
         NSError *error;
         NSDictionary *_check = [NSJSONSerialization JSONObjectWithData:trimmedData options:NSJSONReadingMutableContainers error:&error];
@@ -114,13 +115,13 @@
     }];
 }
 
-- (NSData *)trimmedDataWithResponseObject:(NSData *)responseObject {
+- (NSData *)trimmedDataWithData:(NSData *)responseObject {
     NSString *string = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
     NSMutableCharacterSet *characterSet = [NSMutableCharacterSet new];
     [characterSet addCharactersInString:@"callback("];
     [characterSet addCharactersInString:@");"];
-    NSString *_string = [string stringByTrimmingCharactersInSet:characterSet];
-    NSData *trimmedData = [_string dataUsingEncoding:NSUTF8StringEncoding];
+    NSString *trimmedString = [string stringByTrimmingCharactersInSet:characterSet];
+    NSData *trimmedData = [trimmedString dataUsingEncoding:NSUTF8StringEncoding];
     return trimmedData;
 }
 
