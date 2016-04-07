@@ -85,7 +85,7 @@
         NSData *trimmedData = [self trimmedDataWithResponseObject:responseObject];
         
         NSError *error;
-        NSDictionary *_check = [NSJSONSerialization JSONObjectWithData:trimmedData options:0 error:&error];
+        NSDictionary *_check = [NSJSONSerialization JSONObjectWithData:trimmedData options:NSJSONReadingMutableContainers error:&error];
         RALCheck *check = [[RALCheck alloc] initWithDictionary:_check];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
     }];
