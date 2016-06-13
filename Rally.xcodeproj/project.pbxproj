@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0ED2CDA52221B20E03438740 /* libPods-RallyUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 137A5C310BE729DAFA3D7964 /* libPods-RallyUITests.a */; };
 		267635711CAE5A0400F7A019 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 267635701CAE5A0400F7A019 /* main.m */; };
 		267635741CAE5A0400F7A019 /* RALAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 267635731CAE5A0400F7A019 /* RALAppDelegate.m */; };
 		2676357C1CAE5A0400F7A019 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2676357B1CAE5A0400F7A019 /* Assets.xcassets */; };
@@ -21,7 +22,8 @@
 		2682AFC41CB21A62000D9726 /* RALLibrary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2682AFC01CB21A62000D9726 /* RALLibrary.storyboard */; };
 		2682AFC51CB21A62000D9726 /* RALLibraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2682AFC21CB21A62000D9726 /* RALLibraryViewController.m */; };
 		2682AFD91CB23373000D9726 /* RALLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 2682AFD81CB23373000D9726 /* RALLibrary.m */; };
-		76AC77F2368614DF3BF81A02 /* libPods-Rally.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F46705B190F43764C0F612DF /* libPods-Rally.a */; };
+		6AB407BEC08250DCE16C7B9D /* libPods-Rally.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B1ECA43F0531B0150B100C39 /* libPods-Rally.a */; };
+		B284598A2B2FDAE753C13944 /* libPods-RallyTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F6CD45AAC36E322477A61DD /* libPods-RallyTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		137A5C310BE729DAFA3D7964 /* libPods-RallyUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RallyUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2676356C1CAE5A0400F7A019 /* Rally.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rally.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		267635701CAE5A0400F7A019 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		267635721CAE5A0400F7A019 /* RALAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RALAppDelegate.h; sourceTree = "<group>"; };
@@ -71,9 +74,14 @@
 		2682AFC21CB21A62000D9726 /* RALLibraryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RALLibraryViewController.m; sourceTree = "<group>"; };
 		2682AFD71CB23373000D9726 /* RALLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RALLibrary.h; sourceTree = "<group>"; };
 		2682AFD81CB23373000D9726 /* RALLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RALLibrary.m; sourceTree = "<group>"; };
-		2FAC2507FFD255A08B451EC5 /* Pods-Rally.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rally.release.xcconfig"; path = "Pods/Target Support Files/Pods-Rally/Pods-Rally.release.xcconfig"; sourceTree = "<group>"; };
-		80F549B46D0A74FEB8DCBF19 /* Pods-Rally.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rally.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Rally/Pods-Rally.debug.xcconfig"; sourceTree = "<group>"; };
-		F46705B190F43764C0F612DF /* libPods-Rally.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Rally.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F6CD45AAC36E322477A61DD /* libPods-RallyTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RallyTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BECDC13E51C6AEA6DFBAC71 /* Pods-RallyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RallyUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RallyUITests/Pods-RallyUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		41EFBD207D977B50F9B211F2 /* Pods-RallyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RallyUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RallyUITests/Pods-RallyUITests.release.xcconfig"; sourceTree = "<group>"; };
+		899F26D41181B3DAFDBBB4D7 /* Pods-RallyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RallyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RallyTests/Pods-RallyTests.release.xcconfig"; sourceTree = "<group>"; };
+		A0BFCF65BB60A8FF746CDCFF /* Pods-Rally.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rally.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Rally/Pods-Rally.debug.xcconfig"; sourceTree = "<group>"; };
+		B1ECA43F0531B0150B100C39 /* libPods-Rally.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Rally.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E02297ECA56FFB34FFC5CBD6 /* Pods-Rally.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rally.release.xcconfig"; path = "Pods/Target Support Files/Pods-Rally/Pods-Rally.release.xcconfig"; sourceTree = "<group>"; };
+		FDC67592818DF230168BE17B /* Pods-RallyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RallyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RallyTests/Pods-RallyTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				76AC77F2368614DF3BF81A02 /* libPods-Rally.a in Frameworks */,
+				6AB407BEC08250DCE16C7B9D /* libPods-Rally.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B284598A2B2FDAE753C13944 /* libPods-RallyTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0ED2CDA52221B20E03438740 /* libPods-RallyUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,8 +119,8 @@
 				267635881CAE5A0400F7A019 /* RallyTests */,
 				267635931CAE5A0400F7A019 /* RallyUITests */,
 				2676356D1CAE5A0400F7A019 /* Products */,
-				C042DBE7BC1ADDCC15F8CEA8 /* Pods */,
-				E25BA2FEC09692D3F7888CB6 /* Frameworks */,
+				50EA8BB05EDB32FA1E832EB2 /* Pods */,
+				57210D394F108EA81605635D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -236,19 +246,25 @@
 			path = RALCheck;
 			sourceTree = "<group>";
 		};
-		C042DBE7BC1ADDCC15F8CEA8 /* Pods */ = {
+		50EA8BB05EDB32FA1E832EB2 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				80F549B46D0A74FEB8DCBF19 /* Pods-Rally.debug.xcconfig */,
-				2FAC2507FFD255A08B451EC5 /* Pods-Rally.release.xcconfig */,
+				A0BFCF65BB60A8FF746CDCFF /* Pods-Rally.debug.xcconfig */,
+				E02297ECA56FFB34FFC5CBD6 /* Pods-Rally.release.xcconfig */,
+				FDC67592818DF230168BE17B /* Pods-RallyTests.debug.xcconfig */,
+				899F26D41181B3DAFDBBB4D7 /* Pods-RallyTests.release.xcconfig */,
+				3BECDC13E51C6AEA6DFBAC71 /* Pods-RallyUITests.debug.xcconfig */,
+				41EFBD207D977B50F9B211F2 /* Pods-RallyUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		E25BA2FEC09692D3F7888CB6 /* Frameworks */ = {
+		57210D394F108EA81605635D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F46705B190F43764C0F612DF /* libPods-Rally.a */,
+				B1ECA43F0531B0150B100C39 /* libPods-Rally.a */,
+				2F6CD45AAC36E322477A61DD /* libPods-RallyTests.a */,
+				137A5C310BE729DAFA3D7964 /* libPods-RallyUITests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -260,12 +276,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 267635991CAE5A0400F7A019 /* Build configuration list for PBXNativeTarget "Rally" */;
 			buildPhases = (
-				81063CEBB2634E51AEDD429D /* Check Pods Manifest.lock */,
+				CBAFD495308B915A8EB09E51 /* [CP] Check Pods Manifest.lock */,
 				267635681CAE5A0400F7A019 /* Sources */,
 				267635691CAE5A0400F7A019 /* Frameworks */,
 				2676356A1CAE5A0400F7A019 /* Resources */,
-				03BB2C5E4E0DDB022D0ACF5B /* Embed Pods Frameworks */,
-				D65BFD83BE0D30D5AC95170F /* Copy Pods Resources */,
+				07AA18B2E8E50EE90B5AB2EC /* [CP] Embed Pods Frameworks */,
+				9E6803734E0BDAA220C815DC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -280,9 +296,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2676359C1CAE5A0400F7A019 /* Build configuration list for PBXNativeTarget "RallyTests" */;
 			buildPhases = (
+				35F5EC4F321192084093D0AF /* [CP] Check Pods Manifest.lock */,
 				267635811CAE5A0400F7A019 /* Sources */,
 				267635821CAE5A0400F7A019 /* Frameworks */,
 				267635831CAE5A0400F7A019 /* Resources */,
+				DE633A48482DB970970DE3BD /* [CP] Embed Pods Frameworks */,
+				C0D92EBDB3A7B3F8E49B7A19 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -298,9 +317,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2676359F1CAE5A0400F7A019 /* Build configuration list for PBXNativeTarget "RallyUITests" */;
 			buildPhases = (
+				4AB9D8718E9785DCF748E4F4 /* [CP] Check Pods Manifest.lock */,
 				2676358C1CAE5A0400F7A019 /* Sources */,
 				2676358D1CAE5A0400F7A019 /* Frameworks */,
 				2676358E1CAE5A0400F7A019 /* Resources */,
+				DE2124091F4B3507EE4FF4FB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -382,14 +403,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		03BB2C5E4E0DDB022D0ACF5B /* Embed Pods Frameworks */ = {
+		07AA18B2E8E50EE90B5AB2EC /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -397,14 +418,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Rally/Pods-Rally-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		81063CEBB2634E51AEDD429D /* Check Pods Manifest.lock */ = {
+		35F5EC4F321192084093D0AF /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -412,19 +433,94 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		D65BFD83BE0D30D5AC95170F /* Copy Pods Resources */ = {
+		4AB9D8718E9785DCF748E4F4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9E6803734E0BDAA220C815DC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Rally/Pods-Rally-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C0D92EBDB3A7B3F8E49B7A19 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RallyTests/Pods-RallyTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CBAFD495308B915A8EB09E51 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DE2124091F4B3507EE4FF4FB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RallyUITests/Pods-RallyUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DE633A48482DB970970DE3BD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RallyTests/Pods-RallyTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -564,7 +660,7 @@
 		};
 		2676359A1CAE5A0400F7A019 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 80F549B46D0A74FEB8DCBF19 /* Pods-Rally.debug.xcconfig */;
+			baseConfigurationReference = A0BFCF65BB60A8FF746CDCFF /* Pods-Rally.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Rally/Info.plist;
@@ -576,7 +672,7 @@
 		};
 		2676359B1CAE5A0400F7A019 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2FAC2507FFD255A08B451EC5 /* Pods-Rally.release.xcconfig */;
+			baseConfigurationReference = E02297ECA56FFB34FFC5CBD6 /* Pods-Rally.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Rally/Info.plist;
@@ -588,6 +684,7 @@
 		};
 		2676359D1CAE5A0400F7A019 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FDC67592818DF230168BE17B /* Pods-RallyTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = RallyTests/Info.plist;
@@ -600,6 +697,7 @@
 		};
 		2676359E1CAE5A0400F7A019 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 899F26D41181B3DAFDBBB4D7 /* Pods-RallyTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = RallyTests/Info.plist;
@@ -612,6 +710,7 @@
 		};
 		267635A01CAE5A0400F7A019 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3BECDC13E51C6AEA6DFBAC71 /* Pods-RallyUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = RallyUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -624,6 +723,7 @@
 		};
 		267635A11CAE5A0400F7A019 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41EFBD207D977B50F9B211F2 /* Pods-RallyUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = RallyUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
